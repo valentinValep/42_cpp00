@@ -1,5 +1,6 @@
 #include "Contact.hpp"
 #include <iostream>
+#include <cstdlib>
 
 Contact::Contact(void)
 {
