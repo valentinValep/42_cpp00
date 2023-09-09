@@ -6,8 +6,6 @@ FLAGS := -Wall -Werror -Wextra -std=c++98 -MMD
 
 OBJ := megaphone.o \
 
-OBJ := $(addprefix $(BINARIES_DIR),$(OBJ))
-
 DEPS := ${OBJ:.o=.d}
 
 RM := rm -f
@@ -17,10 +15,7 @@ RM := rm -f
 $(NAME) : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-$(BINARIES_DIR) :
-	mkdir $(BINARIES_DIR)
-
-$(BINARIES_DIR)%.o : $(SOURCES_DIR)%.c | $(BINARIES_DIR)
+%.o : %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
