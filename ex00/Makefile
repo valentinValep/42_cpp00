@@ -2,7 +2,7 @@ NAME := megaphone
 
 CC := c++
 
-FLAGS := -Wall -Werror -Wextra -std=c++98 -MMD
+CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -MMD
 
 OBJ := megaphone.o \
 
@@ -14,9 +14,6 @@ RM := rm -f
 
 $(NAME) : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-%.o : %.c
-	$(CC) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 
