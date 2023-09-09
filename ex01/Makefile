@@ -2,7 +2,7 @@ NAME := phonebook
 
 CC := c++
 
-FLAGS := -Wall -Werror -Wextra -std=c++98 -MMD
+CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -MMD
 
 OBJ := PhoneBook.o \
 		Contact.o \
@@ -18,9 +18,6 @@ RM := rm -f
 
 $(NAME) : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-%.o : %.cpp
-	$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@
 
 all : $(NAME)
 
